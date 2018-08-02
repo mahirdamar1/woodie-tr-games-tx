@@ -248,4 +248,4 @@ client.on('message', async function(message) {
 	}
 });
 
-client.login(ayarlar.token);
+client.login(process.env.BOT_TOKEN);
