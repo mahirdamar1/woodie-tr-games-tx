@@ -74,7 +74,7 @@ class Command {
 						   message.content.substring(1).split(' ')[2] != 2
 					)
 				) {
-					message.reply("Lütfen doğru bir koordinat girin örnek: -işaretle 0 0 veya -işaretle 2 2 sıra ve satırlar 0 ile 2 araasındadır!");
+					message.reply("Lütfen doğru bir koordinat girin örnek: -işaretle 0 0 veya -işaretle 2 2 sıra ve satırlar 0 ile 2 arasındadır!");
 				return;
 				}
 				else map[message.channel.id].playGame(message);
