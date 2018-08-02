@@ -30,7 +30,7 @@ class Command {
 
 				if( this._argsNumber != 1) {
 
-					message.reply("Doğru Kullanım: !tictactoe <@kullanıcı_id>");
+					message.reply("Doğru Kullanım: -tictactoe <@kullanıcı_id>");
 					return;
 				}
 
@@ -46,7 +46,7 @@ class Command {
 				}
 
 				if(!player2IsMember){
-					message.reply("Doğru Kullanım: !tictactoe <@kullanıcı_id>");
+					message.reply("Doğru Kullanım: -tictactoe <@kullanıcı_id>");
 					return;
 				}
 
@@ -74,7 +74,7 @@ class Command {
 						   message.content.substring(1).split(' ')[2] != 2
 					)
 				) {
-					message.reply("Lütfen doğru bir koordinat girin örnek: !işaretle 0 0 veya >işaretle 2 2 sıra ve satırlar 0 ile 2 araasındadır!");
+					message.reply("Lütfen doğru bir koordinat girin örnek: -işaretle 0 0 veya -işaretle 2 2 sıra ve satırlar 0 ile 2 araasındadır!");
 				return;
 				}
 				else map[message.channel.id].playGame(message);
@@ -114,7 +114,7 @@ class TicTacToe extends Game {
 
 		this._players[1] = this._players[1].slice(2,20);
 	
-		message.reply("<@" + this._players[1] + "> ile bir tic-tac-toe oyunu başlattın. !işaretle <satır> <sıra> komutu ile bir işaretleme yap!");
+		message.reply("<@" + this._players[1] + "> ile bir tic-tac-toe oyunu başlattın. -işaretle <satır> <sıra> komutu ile bir işaretleme yap!");
 		 
 		message.channel.send(this._gameBoard[0][0] + " " +
 							 this._gameBoard[0][1] + " " +
@@ -242,7 +242,7 @@ client.on('message', async function(message) {
 	
 	if(message.author.bot) return;
 
-	if (message.content.substring(0, 1) == '!') {           	
+	if (message.content.substring(0, 1) == '-') {           	
 		var command = new Command(message);
 		command.doCommand(message);
 	}
